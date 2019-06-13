@@ -1,0 +1,26 @@
+import matplotlib.pyplot as plt
+
+callist = []
+binlist = []
+nlist=[]
+
+def logisitic(first,lenth):
+    x = first
+    for i in range(lenth):
+        if x < 0:
+            binlist.append(0)
+        else:
+            binlist.append(1)
+        callist.append(x)
+        nlist.append(i)
+        x = 1-2*x*x
+
+
+if __name__ == '__main__':
+    first=0.23424
+    lenth=500
+    logisitic(first,lenth)
+    plt.plot(nlist, callist)
+    plt.show()
+    print (callist)
+    print (binlist)
